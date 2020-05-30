@@ -2,7 +2,6 @@ import requests
 import pprint
 import json
 import random
-import time as t
 import html
 
 #Created game for udemy exercises, link below.
@@ -27,6 +26,7 @@ while guess.lower() != 'quit':
     answers = questions['results'][0]['incorrect_answers'] + [correct_answer]
     random.shuffle(answers)
     number = 1
+#Creating table with question and andswers
     print("#"*80)
     print("# ","Category: {:^64}".format(category)," #")
     print("#","-"*76,"#")
@@ -69,5 +69,12 @@ while guess.lower() != 'quit':
 print("#"*80)
 
 #Get total score after ending the game
-print("Your total score:\nRight answers: {}\nWrong answers: {}".format(right,wrong))
-print("Total number of questions: {}".format(right+wrong))
+total_score = print("Your total score:\nRight answers: {}\nWrong answers: {}".format(right,wrong))
+total_score2 = print("Total number of questions: {}".format(right+wrong))
+print("Do you want to save your score to file?(Y/N)")
+file_answer = input()
+if file_answer.lower() == 'y':
+    ys=open("YourScore.txt",'x')
+    ys.write(total_score+"\n"+total_score2)
+else:
+    print("Goodbye!!!")
