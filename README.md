@@ -54,7 +54,7 @@ Add levels and a category to choose before start game.
 Want to fix bugs wit wrong answers and table bugs.
 -----UPDATE-----
 Fixet only 2 bugs, with typing andswer number and letter.
-Still need to fix "quit option".
+Still need to fix "quit option".--EDIT-- Now works fine :)
 Added save save your score to new file.
 
 ### To Do.
