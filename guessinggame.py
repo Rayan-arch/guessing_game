@@ -14,15 +14,16 @@ print("Welcome to my game.\nGUESS IN FIRST SHOT")
 guess = input("If you want quit,type 'quit', other whise press enter. ")
 right = 0
 wrong = 0
-invalid_guess = False
 
 while guess.lower() != 'quit':
+    invalid_guess = False
     url = "https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple"
     r = requests.get(url)
     questions=json.loads(r.text)
     category = questions['results'][0]['category']
     ask = questions['results'][0]['question']
     correct_answer = questions['results'][0]['correct_answer']
+#Import all answers and suffleing them with correct answer.
     answers = questions['results'][0]['incorrect_answers'] + [correct_answer]
     random.shuffle(answers)
     number = 1
@@ -39,6 +40,8 @@ while guess.lower() != 'quit':
         print("# {}. {:72}".format(number,html.unescape(answer))," #")
         number += 1
     print("#","-"*76,"#")
+#Simple findout if user type number and not letter.
+#I will try to do it right.
     while invalid_guess == False:
         guess = input("# ")
         try:
@@ -52,7 +55,7 @@ while guess.lower() != 'quit':
             
     guess = answers[int(guess)-1]
     print("#","-"*76,"#")
-    
+#Final statment, check if answer is correct.   
     if guess == correct_answer:
         print("#{:78}#".format(" You are right!"))
         right += 1
