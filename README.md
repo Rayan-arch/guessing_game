@@ -55,6 +55,7 @@ Want to fix bugs wit wrong answers and table bugs.
 -----UPDATE-----
 Fixet only 2 bugs, with typing andswer number and letter.
 Still need to fix "quit option".
+Added save save your score to new file.
 
 ### To Do.
 
